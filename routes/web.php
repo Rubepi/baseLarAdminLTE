@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
+Route::get('admin', 'Menu@menuslista')->name('dashboard');
 
 Route::get('login', function () {
     return view('admin.login');
@@ -26,3 +24,6 @@ Route::get('login', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
